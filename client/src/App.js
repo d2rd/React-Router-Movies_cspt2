@@ -27,7 +27,7 @@ export default class App extends Component {
         </div>
         <nav>
         </nav>
-        TO DO:
+        MVP TASKS:
         <l>
           <li>[] Make the card in `MovieList` a link to movie in `:id`</li>
           <li>[] Clicking a card goes to `/movies/id` to see details for selected movie.</li>
