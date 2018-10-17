@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
     };
   }
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/movies')
+      .get("http://localhost:5000/api/movies")
       .then(response => {
         this.setState(() => ({ movies: response.data }));
       })
       .catch(error => {
-        console.error('Server Error', error);
+        console.error("Server Error", error);
       });
   }
 
@@ -30,7 +30,8 @@ export default class MovieList extends Component {
     );
   }
 }
-
+// Add movie link helper to function below read Julie's notes
+// ☞ d01526e1-bf4a-4f30-9136-dfc914c76758
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
