@@ -82,3 +82,7 @@ body {
   color: #ffffff;
 }
 
+.selected {
+  color: orange;
+  font-size: 2rem;
+}

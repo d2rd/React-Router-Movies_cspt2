@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
+import movieData from './movies';
 
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       movies: [],
+      highlightMovie: false, // same as Friends.js
     };
   }
 
@@ -20,7 +22,19 @@ export default class MovieList extends Component {
       });
   }
 
+  movieClick = (id) => {
+    return () => {
+      this.setState(highlightMovie, id)
+    }
+  }
+
   render() {
+    let movies = movieData if(this.state.hightlightMovie !== false); {
+      movies = movies.filter( item => {
+        return item === this.state.highlightMovie
+      })
+    }  // same as Friends.js
+
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
