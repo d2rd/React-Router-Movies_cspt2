@@ -69,7 +69,8 @@ body {
   right: 25px;
   border: 1px solid grey;
   padding: 5px 10px;
-  background-color: rgba(194, 201, 71, 0.92);
+  background-color: rgb(91, 146, 228);
+  color: white;
 }
 .save-button:hover {
   background-color: green;

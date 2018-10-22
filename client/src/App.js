@@ -31,8 +31,8 @@ export default class App extends Component {
         </nav>
         MVP TASKS:
         <l>
-          <li>[] Make the card in `MovieList` a link to movie in `:id`</li>
-          <li>[] Clicking a card goes to `/movies/id` to see details for selected movie.</li>
+          <li>[X] Make the card in `MovieList` a link to movie in `:id`</li>
+          <li>[X] Clicking a card goes to `/movies/id` to see details for selected movie.</li>
           <li>[] Modify line 13 of `Movie.js` in to accept the correct id for the movie selected</li>
           <li>[] Add functionality so `Home` button on `SavedList` component navigates back to home.</li>
           <p>STRETCH</p>
