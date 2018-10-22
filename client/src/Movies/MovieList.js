@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import movieData from './movies';
+
+import { Link } from "react-router-dom";
+// import movieData from './movies';
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -22,18 +24,18 @@ export default class MovieList extends Component {
       });
   }
 
-  movieClick = (id) => {
-    return () => {
-      this.setState(highlightMovie, id)
-    }
-  }
+  // movieClick = (id) => {
+  //   return () => {
+  //     this.setState(highlightMovie, id)
+  //   }
+  // }
 
   render() {
-    let movies = movieData if(this.state.hightlightMovie !== false); {
-      movies = movies.filter( item => {
-        return item === this.state.highlightMovie
-      })
-    }  // same as Friends.js
+    // let movies = movieData if(this.state.hightlightMovie !== false); {
+    //   movies = movies.filter( item => {
+    //     return item === this.state.highlightMovie
+    //   })
+    // }  // same as Friends.js
 
     return (
       <div className="movie-list">
@@ -46,24 +48,50 @@ export default class MovieList extends Component {
 }
 // Add movie link helper to function below read Julie's notes
 // ☞ d01526e1-bf4a-4f30-9136-dfc914c76758
-function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
-  return (
-    <div className="movie-card">
-      <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
-      <h3>Actors</h3>
+// function MovieDetails({ movie }) {
+//   const { title, director, metascore, stars } = movie;
+//   return (
+//      <Link to={'/movies/$movies.id}'}>
 
-      {stars.map(star => (
-        <div key={star} className="movie-star">
-          {star}
-        </div>
-      ))}
-    </div>
-  );
-}
+//     <div className="movie-card">
+//       <h2>{title}</h2>
+//       <div className="movie-director">
+//         Director: <em>{director}</em>
+//       </div>
+//       <div className="movie-metascore">
+//         Metascore: <strong>{metascore}</strong>
+//       </div>
+//       <h3>Actors</h3>
+
+//       {stars.map(star => (
+//         <div key={star} className="movie-star">
+//           {star}
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+function MovieDetails({ movie }) {
+    const { title, director, metascore, stars } = movie;
+    return (
+    <Link to={'/movies/$movies.id}'}>
+  
+    <div className="movie-card">
+    <h2>{title}</h2>
+    <div className="movie-director">
+    Director: <em>{director}</em>
+    </div>
+    <div className="movie-metascore">
+    Metascore: <strong>{metascore}</strong>
+    </div>
+    <h3>Actors</h3>
+    {stars.map(star => (
+    <div key={star} className="movie-star">
+    {star}
+    </div>
+    ))}
+    </div>
+    </Link>
+    );
+    }
